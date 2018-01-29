@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="C05F0DD5-5" name="DGAttribute" version="1.0" notes="DGAttribute"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Attribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="DG::attribute_part(UML::Part)" type="" description="" unit="" values="" default="Part"/>
+					<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Attribute Relationships" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="UML::TraceLink" type="" description="" unit="" values="" default="Trace"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

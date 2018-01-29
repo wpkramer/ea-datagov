@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="497C9647-8" name="DG" version="1.0" notes="Package profile containing diagrams for data governance"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Attribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_CompositeStructure">
+						<Property name="alias" value="Global"/>
+						<Property name="diagramID" value="Global"/>
+						<Property name="pdata" value="ShowTags=1;"/>
+						<Property name="toolbox" value="DGAttribute"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="Domain" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="Domain"/>
+						<Property name="diagramID" value="DMN"/>
+						<Property name="pdata" value="ShowTags=1;"/>
+						<Property name="toolbox" value="DGDomain"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="Entity" notes="Layout the attributes and rules for a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Object">
+						<Property name="alias" value="Entity"/>
+						<Property name="diagramID" value="ent"/>
+						<Property name="pdata" value="ShowTags=1;"/>
+						<Property name="toolbox" value="DGEntity"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="Global" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="Global"/>
+						<Property name="diagramID" value="GLB"/>
+						<Property name="pdata" value="ShowTags=1;"/>
+						<Property name="toolbox" value="DGAttribute"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="2866E8B1-9" name="DGEntity" version="1.0" notes="DGEntity"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Entity" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="DG::domain(UML::Package)" type="" description="" unit="" values="" default="Domain"/>
+					<Tag name="DG::entity_attribute(UML::Object)" type="" description="" unit="" values="" default="Attribute"/>
+					<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Entity Relations" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="DG::access(UML::Dependency)" type="" description="" unit="" values="" default="Access"/>
+					<Tag name="UML::TraceLink" type="" description="" unit="" values="" default="Trace"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

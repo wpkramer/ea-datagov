@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="7B3B904E-D" name="DG" version="1.0" notes="Profile of elements and associations for data governance"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="access" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAABaKEzHynK5HwEAAJADAAAHABEAc3RyLmRhdFVUDQAHIFNTWiBTU1ogU1Na
+pZJBSwMxEIXftYL/YfG0hRX00ot4UCt4aEHq+gNqs9ZibWWbKiL9736ZrNsuVmiVMMkkb+bl
+ZSYLPWmoVxVK9II30UyfOtSBWnhzLQx3eO86l1epJbFnVcQdvlfPsgp2Xh+a4qU6UlcXnNzg
+tev4Pjxv4DlrqhNl2Br95onoKVgzYmVzsKgqqvZ4pcamJKm1By3h3OuW1ROf/llHB7zzr+zj
+Rv41uNuqK6guyXsm/ye+/f197nOMUPdLcj1jTi97RDxwNt2oyoD9yCozo2KxU1F/Vtc7rmtN
+Ez0SldDJIffmzGPr7wilhWks2GVYXv2O0PF2ld3iHaVVxFvWVeM//MYdmd0evIOdeJfUzO2t
++X4nbme1Dr9wH+7uBvcK+wJQSwECFwsUAAAACAAAWihMx8pyuR8BAACQAwAABwAJAAAAAAAA
+AAAAAIAAAAAAc3RyLmRhdFVUBQAHIFNTWlBLBQYAAAAAAQABAD4AAABVAQAAAAA=</Image>
+				<AppliesTo>
+					<Apply type="Dependency">
+						<Property name="_tagGroupings" value="delete=CRUD;update=CRUD;read=CRUD;create=CRUD;"/>
+						<Property name="_tagGroups" value="CRUD"/>
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="create" type="Boolean" description="" unit="" values="True,False" default="False"/>
+					<Tag name="delete" type="Boolean" description="" unit="" values="True,False" default="False"/>
+					<Tag name="read" type="Boolean" description="" unit="" values="True,False" default="True"/>
+					<Tag name="update" type="Boolean" description="" unit="" values="True,False" default="False"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="attribute_part" notes="A part of a domain attribute that is not referenced by the business independent of the attribute.  For example: the governance of the attribute &quot;Phone Number&quot; the country code would not typically rise to the level of a separate topic.  Perhaps for a telecom the country code would be considered a full fledged domain attribute and not just a part of the phone number. " cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAC6IIkzWpK55ugEAAE4HAAAHABEAc3RyLmRhdFVUDQAH47pLWuO6S1rjukta
+tVRNS8NAEH3XCP6HUC8WFG0lHhQP4udBUGzvktaYFvpFEr+Q/nff7Gabbdi0aVGW7C6782bn
+vZlJigFCzBDBx5i7ISbc/WAXO/DQ4XmGW56OOK4w5TxFgn20EOAEB2hzDRZrE+c58pnIPrEh
+/cVERcQc006+FudiLTBHHE/0LjFktG9gj7uQcUXcNSzLS7xydPCOHmfDQBB9FV/EXfFOe+mV
+aqx5y8ae1sQKw8mKV1NLZxNjobPH2xfej8g9Vhm44NdQWsS8y7g3njx8OG0zep0t2Yme1RnU
+Mers2ZFq3Ob5M+hyBrtU7Q5nC9ZdfCsdTEb9HDl3KGUysl6pvtI/45zU0KrKejvmLtbuunVx
+1JVjGK5muUk99Kh3pqpirKy93F44rupsuy7KXa2x2yjk52OIN1rfE5uyEkLiRa+x0k46aopP
+PHJ/zRO5TZSO0ldS4Qk7T/qzySGKCXvDy5UFU3va/4NSOubtYJGXarSPQ6WjnWWTv3VsQnz9
+Kxvx72JTjlOvOmvV/65UnbVUXMFSFuUfZv8dNvFkfIjHv8Xb3WMQpn+0Rd36Lnv2cKPsh/Se
+1qhrjdIqz/n9AlBLAQIXCxQAAAAIAC6IIkzWpK55ugEAAE4HAAAHAAkAAAAAAAAAAAAAgAAA
+AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
+				<AppliesTo>
+					<Apply type="Part">
+						<Property name="isReference" value="false"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="maxLength" type="Integer" description="" unit="" values="" default="0"/>
+					<Tag name="maxShowOnDiagram" type="Boolean" description="" unit="" values="True,False" default="false"/>
+					<Tag name="minLength" type="Integer" description="" unit="" values="" default="0"/>
+					<Tag name="minShowOnDiagram" type="Boolean" description="" unit="" values="True,False" default="false"/>
+					<Tag name="coreType"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="core_type" metatype="CoreType" notes="Core data types understood by the business users for the data being described." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+					<Apply type="Enumeration"/>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="domain" metatype="Domain" notes="A domain or sub domain is used to partition entities, attributes, and business rules." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Package">
+						<Property name="_defaultDiagramType" value="DG::Domain"/>
+						<Property name="_makeComposite" value="true"/>
+						<Property name="URI" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="domain_attribute" metatype="DomainAttribute" instanceType="entity_attribute" notes="Attribute definition that exists independent of an entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="_defaultDiagramType" value="DG::Global"/>
+						<Property name="_makeComposite" value="true"/>
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="entity" metatype="Entity" notes="Attributes and rules for a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Package">
+						<Property name="_defaultDiagramType" value="DG::Entity"/>
+						<Property name="_makeComposite" value="true"/>
+						<Property name="URI" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="entity_attribute" metatype="EntityAttribute" notes="Instance a domain attribute definition within a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Object"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="required" type="enumeration" description="" unit="" values="Required,Optional,Conditional" default="Optional"/>
+					<Tag name="sensitive" type="Boolean" description="" unit="" values="True,False" default="false"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="rule" metatype="Rule" notes="Business rule associated with one or more elements." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Requirement"/>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="system" metatype="System" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Component">
+						<Property name="isIndirectlyInstantiated" value="true"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes>
+			<TaggedValueType property="coreType" description="" notes="Type=RefGUID;Stereotypes=core_type;"/>
+		</TaggedValueTypes>
+		<QuickLink data="Component,system,Object,entity_attribute,,,,Dependency,access,to,CRUD,,TRUE,,TRUE,TRUE,,0,,,,,&#xA;"/>
+	</Content>
+</UMLProfile>

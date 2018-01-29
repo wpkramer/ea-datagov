@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="25FC43BD-9" name="DGDomain" version="1.0" notes="DGDomain"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Domain" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="DG::core_type(UML::Class)" type="" description="" unit="" values="" default="CoreType"/>
+					<Tag name="DG::core_type(UML::Enumeration)" type="" description="" unit="" values="" default="Domain Enum"/>
+					<Tag name="DG::domain(UML::Package)" type="" description="" unit="" values="" default="Domain"/>
+					<Tag name="DG::domain_attribute(UML::Class)" type="" description="" unit="" values="" default="Domain Attribute"/>
+					<Tag name="DG::entity(UML::Package)" type="" description="" unit="" values="" default="Entity"/>
+					<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
+					<Tag name="DG::system(UML::Component)" type="" description="" unit="" values="" default="System"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Domain Relationships" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="UML::TraceLink" type="" description="" unit="" values="" default="Trace"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>
