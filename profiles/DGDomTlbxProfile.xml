@@ -8,10 +8,10 @@
 					<Apply type="ToolboxPage"/>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="DG::core_type(UML::Class)" type="" description="" unit="" values="" default="CoreType"/>
-					<Tag name="DG::core_type(UML::Enumeration)" type="" description="" unit="" values="" default="Domain Enum"/>
+					<Tag name="DG::core_type(UML::Class)" type="" description="" unit="" values="" default="Core Type"/>
+					<Tag name="DG::core_type(UML::Enumeration)" type="" description="" unit="" values="" default="Core Enum"/>
 					<Tag name="DG::domain(UML::Package)" type="" description="" unit="" values="" default="Domain"/>
-					<Tag name="DG::domain_attribute(UML::Class)" type="" description="" unit="" values="" default="Domain Attribute"/>
+					<Tag name="DG::domain_definition(UML::Class)" type="" description="" unit="" values="" default="Domain Attribute"/>
 					<Tag name="DG::entity(UML::Package)" type="" description="" unit="" values="" default="Entity"/>
 					<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
 					<Tag name="DG::system(UML::Component)" type="" description="" unit="" values="" default="System"/>
@@ -27,5 +27,7 @@
 			</Stereotype>
 		</Stereotypes>
 		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
 	</Content>
 </UMLProfile>

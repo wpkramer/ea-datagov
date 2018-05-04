@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <MDG.Technology version="1.0"><Documentation id="DG" name="Data Governance Technology" version="0.1" notes="Leverage Enterprise Architect for defining, versioning, and administrating the definition of business data."/><UMLProfiles><UMLProfile profiletype="uml2">
-			<Documentation id="7B3B904E-D" name="DG" version="1.0" notes="Profile of elements and associations for data governance"/>
+			<Documentation id="7B3B904E-D" name="DG" version="1.0" notes="MDG Technology for Data Definition"/>
 			<Content>
 				<Stereotypes>
 					<Stereotype name="access" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -26,32 +26,17 @@ AAAAAIAAAAAAc3RyLmRhdFVUBQAHIFNTWlBLBQYAAAAAAQABAD4AAABVAQAAAAA=</Image>
 							<Tag name="update" type="Boolean" description="" unit="" values="True,False" default="False"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="attribute_part" notes="A part of a domain attribute that is not referenced by the business independent of the attribute.  For example: the governance of the attribute &quot;Phone Number&quot; the country code would not typically rise to the level of a separate topic.  Perhaps for a telecom the country code would be considered a full fledged domain attribute and not just a part of the phone number. " cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAC6IIkzWpK55ugEAAE4HAAAHABEAc3RyLmRhdFVUDQAH47pLWuO6S1rjukta
-tVRNS8NAEH3XCP6HUC8WFG0lHhQP4udBUGzvktaYFvpFEr+Q/nff7Gabbdi0aVGW7C6782bn
-vZlJigFCzBDBx5i7ISbc/WAXO/DQ4XmGW56OOK4w5TxFgn20EOAEB2hzDRZrE+c58pnIPrEh
-/cVERcQc006+FudiLTBHHE/0LjFktG9gj7uQcUXcNSzLS7xydPCOHmfDQBB9FV/EXfFOe+mV
-aqx5y8ae1sQKw8mKV1NLZxNjobPH2xfej8g9Vhm44NdQWsS8y7g3njx8OG0zep0t2Yme1RnU
-Mers2ZFq3Ob5M+hyBrtU7Q5nC9ZdfCsdTEb9HDl3KGUysl6pvtI/45zU0KrKejvmLtbuunVx
-1JVjGK5muUk99Kh3pqpirKy93F44rupsuy7KXa2x2yjk52OIN1rfE5uyEkLiRa+x0k46aopP
-PHJ/zRO5TZSO0ldS4Qk7T/qzySGKCXvDy5UFU3va/4NSOubtYJGXarSPQ6WjnWWTv3VsQnz9
-Kxvx72JTjlOvOmvV/65UnbVUXMFSFuUfZv8dNvFkfIjHv8Xb3WMQpn+0Rd36Lnv2cKPsh/Se
-1qhrjdIqz/n9AlBLAQIXCxQAAAAIAC6IIkzWpK55ugEAAE4HAAAHAAkAAAAAAAAAAAAAgAAA
-AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
+					<Stereotype name="complex_attribute" metatype="ComplexAttribute" notes="Instance a domain attribute definition within a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Part">
 								<Property name="isReference" value="false"/>
 							</Apply>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="maxLength" type="Integer" description="" unit="" values="" default="0"/>
-							<Tag name="maxShowOnDiagram" type="Boolean" description="" unit="" values="True,False" default="false"/>
-							<Tag name="minLength" type="Integer" description="" unit="" values="" default="0"/>
-							<Tag name="minShowOnDiagram" type="Boolean" description="" unit="" values="True,False" default="false"/>
-							<Tag name="coreType"/>
+							<Tag name="required" type="enumeration" description="" unit="" values="Required,Optional,Conditional" default="Optional"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="core_type" metatype="CoreType" notes="Core data types understood by the business users for the data being described." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="core_type" metatype="CoreType" instanceType="simple_attribute" notes="Core data types understood by the business users for the data being described." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Class">
 								<Property name="isActive" value=""/>
@@ -68,10 +53,10 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="domain_attribute" metatype="DomainAttribute" instanceType="entity_attribute" notes="Attribute definition that exists independent of an entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="domain_definition" metatype="DomainAttribute" instanceType="complex_attribute" notes="Attribute definition that is composed of one or more parts." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Class">
-								<Property name="_defaultDiagramType" value="DG::Global"/>
+								<Property name="_defaultDiagramType" value="DG::Attribute"/>
 								<Property name="_makeComposite" value="true"/>
 								<Property name="isActive" value=""/>
 							</Apply>
@@ -86,19 +71,39 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="entity_attribute" metatype="EntityAttribute" notes="Instance a domain attribute definition within a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Object"/>
-						</AppliesTo>
-						<TaggedValues>
-							<Tag name="required" type="enumeration" description="" unit="" values="Required,Optional,Conditional" default="Optional"/>
-							<Tag name="sensitive" type="Boolean" description="" unit="" values="True,False" default="false"/>
-						</TaggedValues>
-					</Stereotype>
 					<Stereotype name="rule" metatype="Rule" notes="Business rule associated with one or more elements." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Requirement"/>
 						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="simple_attribute" metatype="SimpleAttribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAGhwokz2ITwybwIAACgKAAAHABEAc3RyLmRhdFVUDQAHKMXpWijF6Vooxela
+tVXLbtswEJyrCvQfBPdiAw1ap3AOLXoIkrQ99IXGQI6F48hKADtOJKUPFP73zHJNkVTI2jFa
+CKJocnc5uzNL17jEBDcokGPB2RWuOfuDp3iCDKdcb/COq3M+R1hyXKJCH0OM8ArPsc/vqP0O
+8Gbt+Y2eU/pOGK+kV0Gfl7STd8jRfZ3PCz5fGV0wNLTv4RlnE+IqOOt5loe44HOKO5xztBmI
+x9TgKzhz5+wHp6R97Vm+78GWvjMirv5yau3V2WJ0dZbMM1p8p82c+ZeGhbd8e6YeJfcazv1K
+ZfgRtW8Y/eaBrYxpNhWvMtllRMfH86kR4qyO8dvUwrKaG+t8/YhHTvsZx76pW03ryuRV8NvQ
+W3Z6+ESrmriOaSPYBNPAxBx4GYR1zrHyTtOVnHHnjFQYxA6N3ZUIumprEmb0mdjyNiun1PCM
+1TqGq44iCdVhVehQp5QxpZUgkJo4vlO6SFnvxq54dlm9ZV/ouTO+BTsl3r2xrLV/JOesjZ/u
+NumeW0i3jQKM+obVd086nmR8HYmnv/Ye5B7LQGNsZi3WzynOzqmrxnT0orW22Tht5h0mPkDU
+LL2tVZf4eo5qd7t7oHujq+8uSrEoRRd9opN+HnMsDdqFQS58LPETXzg/5orsVkY9worcahV5
+094aQHXi8oqpcUy+3+P1Ov5Hw07J3ctWjWnvnJxL/X21W843ZTPBr/+ajcSPZdPFGdOo9s1m
+jQqv0pG7KTR+R54Zjc3ZgSHeVKaK9Y57MruI3iF6Trqva7M2NFUPO1v+nf274jGR/Nvh3/r7
+XFkPy5ZabNu93cgZToz9FaPL/9ymrlUvrfKK7z1QSwECFwsUAAAACABocKJM9iE8Mm8CAAAo
+CgAABwAJAAAAAAAAAAAAAIAAAAAAc3RyLmRhdFVUBQAHKMXpWlBLBQYAAAAAAQABAD4AAACl
+AgAAAAA=</Image>
+						<AppliesTo>
+							<Apply type="Part">
+								<Property name="isReference" value="false"/>
+							</Apply>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="maxLength" type="Integer" description="" unit="" values="" default="0"/>
+							<Tag name="maxShowOnDiagram" type="Boolean" description="" unit="" values="True,False" default="True"/>
+							<Tag name="minLength" type="Integer" description="" unit="" values="" default="0"/>
+							<Tag name="minShowOnDiagram" type="Boolean" description="" unit="" values="True,False" default="True"/>
+							<Tag name="required" type="enumeration" description="" unit="" values="Required,Optional,Conditional" default="Optional"/>
+						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="system" metatype="System" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
@@ -108,23 +113,23 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 						</AppliesTo>
 					</Stereotype>
 				</Stereotypes>
-				<TaggedValueTypes>
-					<TaggedValueType property="coreType" description="" notes="Type=RefGUID;Stereotypes=core_type;"/>
-				</TaggedValueTypes>
-				<QuickLink data="Component,system,Object,entity_attribute,,,,Dependency,access,to,CRUD,,TRUE,,TRUE,TRUE,,0,,,,,&#xA;"/>
+				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
+				<QuickLink data="Component,system,Part,simple_attribute,,,,Dependency,access,to,CRUD,,TRUE,,TRUE,TRUE,,0,,,,,&#xA;Component,system,Part,complex_attribute,,,,Dependency,access,to,CRUD,,TRUE,,TRUE,TRUE,,0,,,,,&#xA;"/>
 			</Content>
 		</UMLProfile>
 	</UMLProfiles><DiagramProfile><UMLProfile profiletype="uml2">
-			<Documentation id="497C9647-8" name="DG" version="1.0" notes="Package profile containing diagrams for data governance"/>
+			<Documentation id="497C9647-8" name="DG" version="1.0" notes="DG"/>
 			<Content>
 				<Stereotypes>
-					<Stereotype name="Attribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Entity" notes="Layout the attributes and rules for a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
-							<Apply type="Diagram_CompositeStructure">
-								<Property name="alias" value="Global"/>
-								<Property name="diagramID" value="Global"/>
+							<Apply type="Diagram_Object">
+								<Property name="alias" value="Entity"/>
+								<Property name="diagramID" value="ENT"/>
 								<Property name="pdata" value="ShowTags=1;"/>
-								<Property name="toolbox" value="DGAttribute"/>
+								<Property name="toolbox" value="DGEntity"/>
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
@@ -138,21 +143,11 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="Entity" notes="Layout the attributes and rules for a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Attribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
-							<Apply type="Diagram_Object">
-								<Property name="alias" value="Entity"/>
-								<Property name="diagramID" value="ent"/>
-								<Property name="pdata" value="ShowTags=1;"/>
-								<Property name="toolbox" value="DGEntity"/>
-							</Apply>
-						</AppliesTo>
-					</Stereotype>
-					<Stereotype name="Global" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Diagram_Logical">
-								<Property name="alias" value="Global"/>
-								<Property name="diagramID" value="GLB"/>
+							<Apply type="Diagram_CompositeStructure">
+								<Property name="alias" value="Attribute"/>
+								<Property name="diagramID" value="ATTR"/>
 								<Property name="pdata" value="ShowTags=1;"/>
 								<Property name="toolbox" value="DGAttribute"/>
 							</Apply>
@@ -160,6 +155,8 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 					</Stereotype>
 				</Stereotypes>
 				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
 			</Content>
 		</UMLProfile>
 	</DiagramProfile><UIToolboxes><UMLProfile profiletype="uml2">
@@ -171,8 +168,8 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="DG::attribute_part(UML::Part)" type="" description="" unit="" values="" default="Part"/>
 							<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
+							<Tag name="DG::simple_attribute(UML::Part)" type="" description="" unit="" values="" default="Part"/>
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="Attribute Relationships" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -185,6 +182,8 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 					</Stereotype>
 				</Stereotypes>
 				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
 			</Content>
 		</UMLProfile>
 		<UMLProfile profiletype="uml2">
@@ -196,10 +195,10 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="DG::core_type(UML::Class)" type="" description="" unit="" values="" default="CoreType"/>
-							<Tag name="DG::core_type(UML::Enumeration)" type="" description="" unit="" values="" default="Domain Enum"/>
+							<Tag name="DG::core_type(UML::Class)" type="" description="" unit="" values="" default="Core Type"/>
+							<Tag name="DG::core_type(UML::Enumeration)" type="" description="" unit="" values="" default="Core Enum"/>
 							<Tag name="DG::domain(UML::Package)" type="" description="" unit="" values="" default="Domain"/>
-							<Tag name="DG::domain_attribute(UML::Class)" type="" description="" unit="" values="" default="Domain Attribute"/>
+							<Tag name="DG::domain_definition(UML::Class)" type="" description="" unit="" values="" default="Domain Attribute"/>
 							<Tag name="DG::entity(UML::Package)" type="" description="" unit="" values="" default="Entity"/>
 							<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
 							<Tag name="DG::system(UML::Component)" type="" description="" unit="" values="" default="System"/>
@@ -215,22 +214,14 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 					</Stereotype>
 				</Stereotypes>
 				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
 			</Content>
 		</UMLProfile>
 		<UMLProfile profiletype="uml2">
 			<Documentation id="2866E8B1-9" name="DGEntity" version="1.0" notes="DGEntity"/>
 			<Content>
 				<Stereotypes>
-					<Stereotype name="Entity" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="ToolboxPage"/>
-						</AppliesTo>
-						<TaggedValues>
-							<Tag name="DG::domain(UML::Package)" type="" description="" unit="" values="" default="Domain"/>
-							<Tag name="DG::entity_attribute(UML::Object)" type="" description="" unit="" values="" default="Attribute"/>
-							<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
-						</TaggedValues>
-					</Stereotype>
 					<Stereotype name="Entity Relations" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage"/>
@@ -240,8 +231,21 @@ AABzdHIuZGF0VVQFAAfjuktaUEsFBgAAAAABAAEAPgAAAPABAAAAAA==</Image>
 							<Tag name="UML::TraceLink" type="" description="" unit="" values="" default="Trace"/>
 						</TaggedValues>
 					</Stereotype>
+					<Stereotype name="Entity" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="DG::complex_attribute(UML::Part)" type="" description="" unit="" values="" default="Complex"/>
+							<Tag name="DG::domain(UML::Package)" type="" description="" unit="" values="" default="Domain"/>
+							<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
+							<Tag name="DG::simple_attribute(UML::Part)" type="" description="" unit="" values="" default="Simple"/>
+						</TaggedValues>
+					</Stereotype>
 				</Stereotypes>
 				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
 			</Content>
 		</UMLProfile>
 	</UIToolboxes><RTFTemplates><RefData version="1.0" exporter="EA.25">

@@ -8,8 +8,8 @@
 					<Apply type="ToolboxPage"/>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="DG::attribute_part(UML::Part)" type="" description="" unit="" values="" default="Part"/>
 					<Tag name="DG::rule(UML::Requirement)" type="" description="" unit="" values="" default="Rule"/>
+					<Tag name="DG::simple_attribute(UML::Part)" type="" description="" unit="" values="" default="Part"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="Attribute Relationships" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -22,5 +22,7 @@
 			</Stereotype>
 		</Stereotypes>
 		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
 	</Content>
 </UMLProfile>

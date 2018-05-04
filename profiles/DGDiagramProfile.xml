@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="497C9647-8" name="DG" version="1.0" notes="Package profile containing diagrams for data governance"/>
+	<Documentation id="497C9647-8" name="DG" version="1.0" notes="DG"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="Attribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="Entity" notes="Layout the attributes and rules for a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
-					<Apply type="Diagram_CompositeStructure">
-						<Property name="alias" value="Global"/>
-						<Property name="diagramID" value="Global"/>
+					<Apply type="Diagram_Object">
+						<Property name="alias" value="Entity"/>
+						<Property name="diagramID" value="ENT"/>
 						<Property name="pdata" value="ShowTags=1;"/>
-						<Property name="toolbox" value="DGAttribute"/>
+						<Property name="toolbox" value="DGEntity"/>
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
@@ -23,21 +23,11 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
-			<Stereotype name="Entity" notes="Layout the attributes and rules for a business entity." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="Attribute" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
-					<Apply type="Diagram_Object">
-						<Property name="alias" value="Entity"/>
-						<Property name="diagramID" value="ent"/>
-						<Property name="pdata" value="ShowTags=1;"/>
-						<Property name="toolbox" value="DGEntity"/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="Global" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Diagram_Logical">
-						<Property name="alias" value="Global"/>
-						<Property name="diagramID" value="GLB"/>
+					<Apply type="Diagram_CompositeStructure">
+						<Property name="alias" value="Attribute"/>
+						<Property name="diagramID" value="ATTR"/>
 						<Property name="pdata" value="ShowTags=1;"/>
 						<Property name="toolbox" value="DGAttribute"/>
 					</Apply>
@@ -45,5 +35,7 @@
 			</Stereotype>
 		</Stereotypes>
 		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
 	</Content>
 </UMLProfile>
